@@ -4,10 +4,11 @@
   "description": "A sample angular game, ready to be uploaded to itch.io",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --progress",
     "start": "node server.js",
     "zip": "rm -vf bundle.zip && cd dist/ && bestzip ../bundle.zip *",
-    "deploy": "npm run build && npm run zip"
+    "deploy": "webpack -p --progress && npm run zip",
+    "dev": "webpack-dev-server --inline --progress"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -29,7 +30,8 @@
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.1.6",
     "webpack": "^4.25.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
     "@angular/common": "^7.0.3",

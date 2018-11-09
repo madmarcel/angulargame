@@ -2,9 +2,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ScriptExtPlugin = require('script-ext-html-webpack-plugin');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
+const path = require('path');
 
 module.exports = function () {
     return {
+        devServer: {
+            contentBase: path.join(__dirname, 'dist'),
+            compress: true,
+            port: 3000
+        },
         entry: './src/main.ts',
         output: {
             path: __dirname + '/dist',
