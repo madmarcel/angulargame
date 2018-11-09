@@ -1,0 +1,48 @@
+{
+  "name": "angulargame",
+  "version": "1.0.0",
+  "description": "A sample angular game, ready to be uploaded to itch.io",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "node server.js",
+    "zip": "rm -vf bundle.zip && cd dist/ && bestzip ../bundle.zip *",
+    "deploy": "npm run build && npm run zip"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madmarcel/angulargame.git"
+  },
+  "keywords": [],
+  "author": "madmarcel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madmarcel/angulargame/issues"
+  },
+  "homepage": "https://github.com/madmarcel/angulargame#readme",
+  "devDependencies": {
+    "bestzip": "^2.1.2",
+    "copy-webpack-plugin": "^4.6.0",
+    "html-webpack-plugin": "^3.2.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "@angular/common": "^7.0.3",
+    "@angular/compiler": "^7.0.3",
+    "@angular/compiler-cli": "^7.0.3",
+    "@angular/core": "^7.0.3",
+    "@angular/platform-browser": "^7.0.3",
+    "@angular/platform-browser-dynamic": "^7.0.3",
+    "@ngtools/webpack": "^7.0.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "rxjs": "^6.3.3",
+    "script-ext-html-webpack-plugin": "^2.1.2",
+    "zone.js": "^0.8.26"
+  }
+}
